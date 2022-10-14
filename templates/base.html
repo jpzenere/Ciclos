@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'TEM/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'Favicon.ico' %}" type="image/x-icon">
+    <title>{% block titulo%}Ciclos{% endblock %}</title>
+</head>
+<body>
+    <div class="body">
+        <header>
+            <div class="logoContainer">
+                {% block logo %}<a href="/index/"><img src="{% static 'TEM/img/Logo/Logo.png'%}" alt="Logo"></a>
+                {% endblock %}
+            </div>
+            <div class="heroContainer">
+                <h1>Ciclos</h1>
+                <h2>Registro electrónico de materiales</h2>
+            </div>
+            <div class="logContainer">
+                <a href="">Log In</a>
+            </div>
+        </header>
+        <aside>
+            <nav>
+                {% block ListadoButton%}<a href="/Listado/" class="navButton"><li>Listado</li></a>{% endblock %}
+                {% block LimpiezaButton %}<a href="/Limpieza/" class="navButton"><li>Limpieza</li></a>{% endblock %}
+                {% block DepirogenadoButton %}<a href="/Depirogenado/" class="navButton"><li>Depirogenado</li></a>{% endblock %}
+                {% block AutoclaveButton %}<a href="/Autoclave/" class="navButton"><li>Autoclave</li></a>{% endblock %}
+                {% block EstufaButton %}<a href="/Estufa/" class="navButton"><li>Estufa</li></a>{% endblock %}
+                {% block UsoButton %}<a href="/Uso/" class="navButton"><li>Uso</li></a>{% endblock %}
+                {% block UsuariosButton %}<a href="/Usuarios/" class="navButton"><li>Usuarios</li></a>{% endblock %}   
+            </nav>
+        </aside>
+        <main>
+            {% block main%}{% endblock%}
+        </main>
+        <footer>
+            <p>Desarrollado por: Juan Panozzo Zénere</p>
+        </footer>
+    </div>
+    
+</body>
+</html>

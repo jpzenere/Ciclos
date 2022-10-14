@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}Ciclos - Usuarios{% endblock titulo %}
+{% block logo %}<a href="/index/"><img src="{% static 'TEM/img/Logo/Logo.png'%}" alt="Logo"></a>{% endblock %}
+{% block UsuariosButton %}
+<a href="/Usuarios/" class="navButton"><li id="ButtonSelected">Usuarios</li></a>
+{% endblock %}
+{% block  main%}
+    <p>Usuarios</p>   
+{% endblock  %}
