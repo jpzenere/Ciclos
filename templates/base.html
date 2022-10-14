@@ -7,40 +7,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'TEM/style.css' %}">
     <link rel="shortcut icon" href="{% static 'Favicon.ico' %}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f56b239c28.js" crossorigin="anonymous"></script>
     <title>{% block titulo%}Ciclos{% endblock %}</title>
 </head>
 <body>
     <div class="body">
         <header>
-            <div class="logoContainer">
-                {% block logo %}<a href="/index/"><img src="{% static 'TEM/img/Logo/Logo.png'%}" alt="Logo"></a>
-                {% endblock %}
+            <div class="logContainer">
+                <p id="fechaHora"></p>
+                <a href="">{% block log%}<i class="fa-solid fa-right-to-bracket"></i> Log In{% endblock %}</a>
             </div>
             <div class="heroContainer">
-                <h1>Ciclos</h1>
-                <h2>Registro electrónico de materiales</h2>
-            </div>
-            <div class="logContainer">
-                <a href="">Log In</a>
+                <div class="logoContainer">
+                    {% block logo %}<a href="/index/"><img src="{% static 'TEM/img/Logo/Logo.png'%}" alt="Logo"></a>
+                    {% endblock %}
+                </div>
+                <div class="hero">
+                    <h1>Ciclos</h1>
+                    <h2>Registro electrónico de materiales</h2>
+                </div>
             </div>
         </header>
-        <aside>
-            <nav>
-                {% block ListadoButton%}<a href="/Listado/" class="navButton"><li>Listado</li></a>{% endblock %}
-                {% block LimpiezaButton %}<a href="/Limpieza/" class="navButton"><li>Limpieza</li></a>{% endblock %}
-                {% block DepirogenadoButton %}<a href="/Depirogenado/" class="navButton"><li>Depirogenado</li></a>{% endblock %}
-                {% block AutoclaveButton %}<a href="/Autoclave/" class="navButton"><li>Autoclave</li></a>{% endblock %}
-                {% block EstufaButton %}<a href="/Estufa/" class="navButton"><li>Estufa</li></a>{% endblock %}
-                {% block UsoButton %}<a href="/Uso/" class="navButton"><li>Uso</li></a>{% endblock %}
-                {% block UsuariosButton %}<a href="/Usuarios/" class="navButton"><li>Usuarios</li></a>{% endblock %}   
-            </nav>
-        </aside>
         <main>
-            {% block main%}{% endblock%}
+            <aside id="aside">
+                <div id="burger">
+                    <i onclick="{document.getElementById('nav').style.display='flex';
+                    document.getElementById('x').style.display='block';
+                    document.getElementById('bars').style.display='none'}" class="fa-solid fa-bars" id="bars"></i>
+                    <i onclick="{document.getElementById('nav').style.display='none';
+                    document.getElementById('x').style.display='none';
+                    document.getElementById('bars').style.display='block'}" class="fa-solid fa-x" id="x"></i>
+                </div>
+                <nav id="nav">
+                    
+                    {% block ListadoButton%}<a href="/Listado/" class="navButton"><li>Listado</li></a>{% endblock %}
+                    {% block LimpiezaButton %}<a href="/Limpieza/" class="navButton"><li>Limpieza</li></a>{% endblock %}
+                    {% block DepirogenadoButton %}<a href="/Depirogenado/" class="navButton"><li>Depirogenado</li></a>{% endblock %}
+                    {% block AutoclaveButton %}<a href="/Autoclave/" class="navButton"><li>Autoclave</li></a>{% endblock %}
+                    {% block EstufaButton %}<a href="/Estufa/" class="navButton"><li>Estufa</li></a>{% endblock %}
+                    {% block UsoButton %}<a href="/Uso/" class="navButton"><li>Uso</li></a>{% endblock %}
+                    {% block UsuariosButton %}<a href="/Usuarios/" class="navButton"><li>Usuarios</li></a>{% endblock %}   
+                </nav>
+            </aside>
+            <section>
+                {% block section%}{% endblock%}
+            </section>
         </main>
         <footer>
             <p>Desarrollado por: Juan Panozzo Zénere</p>
         </footer>
+        <script src="{% static 'TEM/features.js' %}"></script>
     </div>
     
 </body>
